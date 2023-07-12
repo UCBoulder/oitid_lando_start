@@ -4,6 +4,9 @@ inputs:
   GH_TOKEN_REPO:
     description: "PAT"
     required: true
+  GITHUB_TOKEN:
+    description: "Github token"
+    required: true
   LANDO_ENV:
     description: ".env variables"
     required: true
@@ -116,6 +119,7 @@ runs:
       shell: bash
       env:
         gh_token: ${{ inputs.GH_TOKEN_REPO }}
+        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         lando_env: ${{ inputs.LANDO_ENV }}
         test_users: ${{ inputs.CREATEUSERS }}
         servicenow: ${{ inputs.SERVICENOW_KEY }}
