@@ -35,6 +35,11 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Custom DATABASE
+      run: echo "DATABASE=$( $DATABASE )" >> $GITHUB_ENV
+      env:
+        database: ${{ inputs.DATABASE }}
+
     - name: Set lando version.
       run: echo "LANDO_VERSION=$(cat .github/lando_version.md)" >> $GITHUB_ENV
       shell: bash
