@@ -39,6 +39,7 @@ runs:
       run: echo "DATABASE=$( $DATABASE )" >> $GITHUB_ENV
       env:
         database: ${{ inputs.DATABASE }}
+      shell: bash
 
     - name: Set lando version.
       run: echo "LANDO_VERSION=$(cat .github/lando_version.md)" >> $GITHUB_ENV
