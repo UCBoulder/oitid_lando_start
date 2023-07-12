@@ -116,7 +116,6 @@ runs:
       shell: bash
       env:
         gh_token: ${{ inputs.GH_TOKEN_REPO }}
-        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         lando_env: ${{ inputs.LANDO_ENV }}
         test_users: ${{ inputs.CREATEUSERS }}
         servicenow: ${{ inputs.SERVICENOW_KEY }}
