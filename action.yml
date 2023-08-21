@@ -119,7 +119,7 @@ runs:
         echo "$encrypt_key" > .keys/encrypt.key
         echo "$servicenow" > .keys/oit.servicenow.key
         echo "$teams_key" > .keys/dingo_teams.key
-        echo "$liason" > .keys/oit.liaison.key
+        echo "$liason" > .keys/oit.liaison.encrypted.key
         echo "$subscripiton" > .keys/oit.subscriptions.key
         cp blt/local-behat.yml tests/behat/local.yml
       shell: bash
