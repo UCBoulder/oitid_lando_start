@@ -28,6 +28,9 @@ inputs:
   SUBSCRIPTIONS_KEY:
     description: "Subscriptions key"
     required: true
+  CONFIG_SYNC:
+    description: "Set to 0 to skip a config import"
+    required: true
   DATABASE:
     description: "Use specific backup"
     required: false
@@ -77,7 +80,7 @@ runs:
         #composer install --ignore-platform-reqs -n
         echo "$lando_env" > .env
         echo "GITHUB_TOKEN=$GITHUB_ACTOR:$GITHUB_TOKEN" >> .env
-        vendor/bin/blt oit:landosetup $gh_token
+        vendor/bin/blt oit:landosetup $gh_token $config_sync
         ls docroot/sites/default/settings/
         mkdir .keys
         echo "$test_users" > .keys/createTestUsers.sh
@@ -98,6 +101,7 @@ runs:
         teams_key: ${{ inputs.TEAMS_KEY }}
         liason: ${{ inputs.LIASON }}
         subscripiton: ${{ inputs.SUBSCRIPTIONS_KEY }}
+        config_sync:  ${{ inputs.CONFIG_SYNC }}
 
     - name: Custom Database
       if: "${{ env.DATABASE != '' }}"
