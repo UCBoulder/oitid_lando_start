@@ -89,7 +89,6 @@ runs:
         echo "$teams_key" > .keys/dingo_teams.key
         echo "$liason" > .keys/oit.liaison.encrypted.key
         echo "$subscripiton" > .keys/oit.subscriptions.key
-        cp blt/local-behat.yml tests/behat/local.yml
       shell: bash
       env:
         gh_token: ${{ inputs.GH_TOKEN_REPO }}
