@@ -79,7 +79,7 @@ runs:
         composer config -g github-oauth.github.com $gh_token
         #composer install --ignore-platform-reqs -n
         echo "$lando_env" > .env
-        echo "GITHUB_TOKEN=$GITHUB_ACTOR:$GITHUB_TOKEN" >> .env
+        echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> .env
         vendor/bin/blt oit:landosetup $gh_token $config_sync
         ls docroot/sites/default/settings/
         mkdir .keys
