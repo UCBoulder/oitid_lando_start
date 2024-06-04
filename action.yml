@@ -16,6 +16,8 @@ inputs:
   DATABASE:
     description: "Use specific backup"
     required: false
+permissions:
+  contents: read
 
 runs:
   using: "composite"
