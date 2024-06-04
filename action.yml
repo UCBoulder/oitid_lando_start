@@ -10,24 +10,6 @@ inputs:
   LANDO_ENV:
     description: ".env variables"
     required: true
-  CREATEUSERS:
-    description: "Dev users script"
-    required: true
-  SERVICENOW_KEY:
-    description: "Servicenow key"
-    required: true
-  ENCRYPT_KEY:
-    description: "One key to rule them all"
-    required: true
-  TEAMS_KEY:
-    description: "Key to send teams messages"
-    required: true
-  LIASON:
-    description: "Liason Key"
-    required: true
-  SUBSCRIPTIONS_KEY:
-    description: "Subscriptions key"
-    required: true
   CONFIG_SYNC:
     description: "Set to 0 to skip a config import"
     required: true
@@ -85,12 +67,6 @@ runs:
         gh_token: ${{ inputs.GH_TOKEN_REPO }}
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         lando_env: ${{ inputs.LANDO_ENV }}
-        test_users: ${{ inputs.CREATEUSERS }}
-        servicenow: ${{ inputs.SERVICENOW_KEY }}
-        encrypt_key: ${{ inputs.ENCRYPT_KEY }}
-        teams_key: ${{ inputs.TEAMS_KEY }}
-        liason: ${{ inputs.LIASON }}
-        subscripiton: ${{ inputs.SUBSCRIPTIONS_KEY }}
         config_sync:  ${{ inputs.CONFIG_SYNC }}
 
     - name: Custom Database
