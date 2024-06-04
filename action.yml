@@ -76,19 +76,10 @@ runs:
 
     - name: Spin up site
       run: |
-        composer config -g github-oauth.github.com $gh_token
-        #composer install --ignore-platform-reqs -n
         echo "$lando_env" > .env
         echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> .env
         vendor/bin/blt oit:landosetup $gh_token $config_sync
         ls docroot/sites/default/settings/
-        mkdir .keys
-        echo "$test_users" > .keys/createTestUsers.sh
-        echo "$encrypt_key" > .keys/encrypt.key
-        echo "$servicenow" > .keys/oit.servicenow.key
-        echo "$teams_key" > .keys/dingo_teams.key
-        echo "$liason" > .keys/oit.liaison.encrypted.key
-        echo "$subscripiton" > .keys/oit.subscriptions.key
       shell: bash
       env:
         gh_token: ${{ inputs.GH_TOKEN_REPO }}
