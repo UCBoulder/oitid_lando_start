@@ -67,7 +67,7 @@ runs:
       run: |
         echo "$lando_env" > .env
         echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> .env
-        vendor/bin/blt oit:landosetup $gh_token $config_sync
+        vendor/bin/robo landosetup $gh_token $config_sync
         ls docroot/sites/default/settings/
       shell: bash
       env:
